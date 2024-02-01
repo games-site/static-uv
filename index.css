@@ -1,117 +1,174 @@
-/* Custom CSS for black theme */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
+
 body {
-  background-color: #000;
-  color: #fff;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   margin: 0;
-  padding: 0;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-#header {
-  background-color: #000;
-  padding: 20px;
-  text-align: center;
+.fa-magnifying-glass {
+  color: white;
 }
 
-#header h1 {
-  margin: 0;
-  font-size: 24px;
-  font-family: 'Arial', sans-serif;
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.header-center {
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10%;
+}
+
+.left-margin {
+  margin: 0px 16px;
+}
+
+#uv-error {
+  color: #ff6666 !important;
+  white-space: pre-wrap;
+}
+
+#uv-error-code {
+  font-size: 12px;
   color: #fff;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-family: "Courier New", Courier, monospace;
 }
 
-#header img {
-  width: 20%;
-  height: auto;
+#uv-register-sw {
+  color: white;
+  background: #555555;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  padding: 16px 20px;
+  line-height: 16px;
+  display: none;
 }
 
-#content {
-  text-align: center;
-  padding: 20px;
-  margin-top: -4%;
+#uv-register-sw:active {
+  background: #333333;
 }
 
-#content h1 {
-  font-size: 24px;
-  cursor:pointer;
-  text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
-  line-height: 1.5;
+#uv-register-sw.show {
+  display: block;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+}
+
+.logo-wrapper .text {
+  font-size: 75px;
+  color: #fff;
+}
+
+.logo-wrapper h1 {
+  color: white;
+}
+
+footer {
+  margin: 0 5vw;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  line-height: 30px;
   margin-bottom: 20px;
 }
 
-#searchbar {
-  text-align: center;
-  margin: 20px auto;
+footer > div {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
 }
 
-.form__input {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  width: 300px;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-  background-color: #222;
-  text-align: center;
-  color: #fff;
-  cursor:cell;
-}
-
-a{
+footer a,
+footer span {
+  margin: 0 15px;
   text-decoration: none;
-  color:white;
-  width:50px;
-  height:50px;
-  padding-right: 1px;
-  padding-left: 1px;
-  text-align: center;
-  align-self: center;
+  color: #fff;
+  font-size: 15px;
 }
 
-.form__input::placeholder {
-  color: #aaa;
-  text-align: center;
+footer a {
+  cursor: pointer;
 }
 
-.form_input:hover{
-  cursor:cell;
+footer a:hover {
+  text-decoration: underline;
 }
 
-.form__input:focus {
+.desc p {
+  width: 560px;
+  color: rgba(253, 253, 253, 0.514);
+}
+
+#uv-address {
+  background: none;
+  font-family: inherit;
+  padding: 0px 17px;
+  height: 48px;
+  border: 1px solid rgb(255, 255, 255, 0.2);
+  color: var(--text-color);
+  border-radius: 3px;
   outline: none;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  width: 350px;
+  margin-top: 5px;
+  border-radius: 50px;
+  color: #fff;
+  transition: border-radius 0.1s;
 }
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-#footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  border-top-width: 1px;
-  border-top-style: solid;
-  border-top-color: #99ccff;
-  font-family: 'Open Sans', sans-serif;
+
+#uv-address:focus {
+  border: 1px solid rgba(253, 253, 253, 0.514);
+  border-radius: 6px;
+}
+
+.credit {
+  border-radius: 10px;
+  padding: 10px;
+  display: block;
+  border: #fff 1px solid;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.credit label {
+  margin-left: auto;
+  margin-right: 15px;
+}
+
+.credit a,
+.credit label {
+  color: white;
+  text-decoration: underline;
+  text-align: right;
+}
+
+.credit pre {
+  display: none;
   width: 100%;
-  height:15px;
-  background-color: #000;
-  padding-top: 7.5px;
-  padding-bottom: 10px;
-  text-align: center;
-  color: #fff;
-  font-size: 14px;
 }
 
-#footer p {
-  margin: 0;
+.credit label::after {
+  content: "show license";
+  cursor: pointer;
 }
 
-.fa {
-  font-size: 24px;
-  margin-right: 10px;
-  color: #fff;
+.credit input:checked + label::after {
+  content: "hide license";
 }
 
-.fa:hover {
-  color: #aaa;
+.credit input:checked ~ pre {
+  display: block;
 }
